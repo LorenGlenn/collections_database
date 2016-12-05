@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All My Buddies</title>
+  </head>
+  <body>
+    @foreach(var beanie in Model)
+    {
+      <h4>Check out this lil guy!</h4>
+      <li>Name: @beanie.GetName()
+        <ul>
+          <li>Rarity: @beanie.GetRarity()</li>
+          <li>Price: @beanie.GetCost()</li>
+        </ul>
+      </li>
+      <br>
+
+    }
+  </body>
+</html>
