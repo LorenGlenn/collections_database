@@ -22,6 +22,14 @@ namespace Inventory
         List<Beanie> allMyBabies = Beanie.GetAll();
         return View["beanies.cshtml", allMyBabies];
       };
+
+      Get["/throwOutBaby/{id}"] = parameters =>
+      {
+        Beanie newBeanie = Beanie.Find(parameters.id);
+        string name = newBeanie.GetName();
+        Beanie.RemoveABeanie(parameters.id);
+        return View["throwOutBaby.cshtml", name];
+      };
     }
   }
 }
