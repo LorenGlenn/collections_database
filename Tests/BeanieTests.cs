@@ -42,6 +42,17 @@ namespace InventoryTest
       Assert.Equal(testList, result);
     }
 
+    [Fact]
+    public void Test_DeletesABeanieFromDB_True()
+    {
+      Beanie testBeanie = new Beanie("Ryan", "High", 100, 1);
+      testBeanie.Save();
+      Beanie.RemoveABeanie(1);
+      Beanie foundBeanie = Beanie.Find(1);
+
+      Assert.Equal(foundBeanie.GetName(), null);
+    }
+
     public void Dispose()
     {
       Beanie.DeleteAll();

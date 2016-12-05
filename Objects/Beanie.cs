@@ -128,6 +128,29 @@ namespace Inventory.Objects
       }
     }
 
+    public static void RemoveABeanie(int id)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("DELETE FROM beanie_babies WHERE id = @BeanieId;", conn);
+      SqlParameter beanieIdParameter = new SqlParameter();
+      beanieIdParameter.ParameterName = "@BeanieId";
+      beanieIdParameter.Value = id.ToString();
+      cmd.Parameters.Add(beanieIdParameter);
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
+
+    }
+
     public static Beanie Find(int id)
     {
       SqlConnection conn = DB.Connection();
