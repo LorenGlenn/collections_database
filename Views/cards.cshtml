@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All My Buddies</title>
+  </head>
+  <body>
+    @foreach(var card in Model)
+    {
+      <h4>Check out this lil guy!</h4>
+      <li>Name: @card.GetName()
+        <ul>
+          <li>Rarity: @card.GetRarity()</li>
+          <li>Price: @card.GetCost()</li>
+          <button type="button"><a href="/throwOutCard/@card.GetId()">Delete</a></button>
+        </ul>
+      </li>
+      <br>
+
+    }
+  </body>
+</html>

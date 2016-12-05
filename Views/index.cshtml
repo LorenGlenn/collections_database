@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Beanie Babies!</title>
+    <title>Beanie Babies!.. and cards</title>
   </head>
   <body>
     <form action="/mybeaniebuddies" method="post">
@@ -12,10 +12,22 @@
       <label for="beanie-rarity">Enter the rarity level(may not exceed 9000)</label>
       <input name="beanie-rarity" type="text">
       <br>
-      <label for="beanie-cost">How much would you pay for a cute lil dude like this?</label>
+      <label for="beanie-cost">How much would you pay for a cute buddy like this?</label>
       <input name="beanie-cost" type="text">
       <br>
       <button type="submit">Add my Lil Beanie Baby Buddy!</button>
+    </form>
+    <form action="/mycards" method="post">
+      <label for="card-name">Enter your card Name</label>
+      <input name="card-name" type="text">
+      <br>
+      <label for="card-rarity">Enter the rarity level(may not exceed 9000)</label>
+      <input name="card-rarity" type="text">
+      <br>
+      <label for="card-cost">How much would you pay for this card?</label>
+      <input name="card-cost" type="text">
+      <br>
+      <button type="submit">Add my new Card!</button>
     </form>
   </body>
 </html>
